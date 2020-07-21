@@ -11,6 +11,8 @@ Du kan nu köpa en snusdosa du kan öppna snusdosan och ta en prilla ur den.
 När du tagit en prilla startar en timer på en timme. 
 Under denna timme kan du inte stoppa in en ny snus eller liknande du spottar automatiskt ut snusen efter en timme
 
+Ta bort "-master" ur namnet om du vill att det ska funka
+
 # Kontakt
 Discord - Killer#0007
 är det något ni vill ska ändras eller frågor om scriptet så är det bara att höra av sig!
