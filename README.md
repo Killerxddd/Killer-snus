@@ -13,6 +13,11 @@ Under denna timme kan du inte stoppa in en ny snus eller liknande du spottar aut
 
 Ta bort "-master" ur namnet om du vill att det ska funka
 
+# Uppdatering 2020-07-27
+Alla notifikationer har bytts till pNotify
+Nytt item "Snustock" (en stock snus) Använder du den får du 10 dosor snus
+
+
 # Kontakt
 Discord - Killer#0007
 är det något ni vill ska ändras eller frågor om scriptet så är det bara att höra av sig!
