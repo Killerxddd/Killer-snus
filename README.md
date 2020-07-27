@@ -15,6 +15,7 @@ Ta bort "-master" ur namnet om du vill att det ska funka
 
 # Uppdatering 2020-07-27
 Alla notifikationer har bytts till pNotify
+
 Nytt item "Snustock" (en stock snus) Använder du den får du 10 dosor snus
 
 
