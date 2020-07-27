@@ -1,6 +1,21 @@
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
+ESX.RegisterUsableItem('snustock', function(source)
+    local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
+    local snushelvetetQuantity = xPlayer.getInventoryItem('snustock').count
+    
+    if snushelvetetQuantity > 0 then
+        xPlayer.removeInventoryItem('snustock', 1)
+		xPlayer.addInventoryItem('snusdosa', 10)
+		
+		TriggerClientEvent("pNotify:SendNotification", -1, {text = "Du öppnar en stock snus..", layout = "BottomCenter"})
+    else
+		TriggerClientEvent("pNotify:SendNotification", -1, {text = "Du har ingen snus stock?", layout = "BottomCenter"})
+    end
+end)
+
 ESX.RegisterUsableItem('snusdosa', function(source)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
@@ -9,9 +24,9 @@ ESX.RegisterUsableItem('snusdosa', function(source)
     if snushelvetetQuantity > 0 then
         xPlayer.removeInventoryItem('snusdosa', 1)
 		xPlayer.addInventoryItem('snus', 24)
-        notification("Du öppnar din snusdosa...")
+		TriggerClientEvent("pNotify:SendNotification", -1, {text = "Du öppnar din snusdosa...", layout = "BottomCenter"})
     else
-        notification("Du har ingen snusdosa!")
+		TriggerClientEvent("pNotify:SendNotification", -1, {text = "Du har ingen snusdosa?", layout = "BottomCenter"})
     end
 end)
 
@@ -103,7 +118,3 @@ AddEventHandler('Killer-snus:removeSnusItem', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
 	xPlayer.removeInventoryItem('snus', 1)
 end)
-
-function notification(text)
-    TriggerClientEvent('esx:showNotification', source, text)
-end
