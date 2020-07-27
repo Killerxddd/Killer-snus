@@ -24,7 +24,8 @@ AddEventHandler('Killer-snus:prepareActions', function(source)
 			local animName = 'pill_fp' 
 			
 			RequestAnimDict(animDict)
-			TriggerServerEvent('3dme:shareDisplay', 'Stoppar in en prilla')
+			
+			TriggerEvent("pNotify:SendNotification", {text = "Du stoppade upp en prilla!", layout = "BottomCenter"})
 			
 			while not HasAnimDictLoaded(animDict) do
 				Citizen.Wait(10)
@@ -33,7 +34,7 @@ AddEventHandler('Killer-snus:prepareActions', function(source)
 			TaskPlayAnim(GetPlayerPed(-1), animDict, animName, 8.0, -8.0, 2500, 2, 0, false, false, false)
 			Citizen.Wait(1500)
 		else
-			ESX.ShowNotification('Du har redan en snus inne!, du kan stoppa in en ny om ' .. (math.floor(cooldown / 60) .. ' minuter...'))
+		TriggerEvent("pNotify:SendNotification", {text = 'Du har redan en snus inne, du kan stoppa in en ny om  ' .. (math.floor(cooldown / 60)) .. '  minuter', layout = 'BottomCenter'}) 
 		end
 	end, 'snus-cooldown')
 end)
